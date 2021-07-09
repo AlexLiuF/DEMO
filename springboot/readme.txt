@@ -12,12 +12,11 @@ application-test.yml：测试环境
 application-prod.yml：生产环境
 至于哪个具体的配置文件会被加载，需要在application.yml文件中通过spring.profiles.active属性来设置，其值对应{profile}值。
 
-
 sql语句
 CREATE TABLE `user` (
-  `id` int(32) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(32) NOT NULL,
-  `passWord` varchar(50) NOT NULL,
-  `realName` varchar(32) DEFAULT NULL,
+  id int(32) NOT NULL AUTO_INCREMENT COMMENT "用户id",
+  userName varchar(32) NOT NULL COMMENT "用户名",
+  passWord varchar(50) NOT NULL COMMENT "密码",
+  realName varchar(32) DEFAULT NULL COMMENT "真实名字",
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT"用户表";
